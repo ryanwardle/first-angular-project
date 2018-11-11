@@ -11,6 +11,12 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'TestServer';
+  serverCreated = false;
+  servers = ['TestServer', 'TestServer 2'];
+  // userName = '';
+  phrase = 'please work';
+  number = [];
+  display = true;
 
   constructor() {
     setTimeout(() => {
@@ -22,10 +28,25 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
+   this.serverCreated = true;
+   this.servers.push(this.serverName);
    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+
+// Can just use this as an expression in HTML
+  // noUserName() {
+    // if (this.userName.length > 0) {
+      // return false;
+    // }
+    // return true;
+  // }
+
+  togglePhrase() {
+    console.log('yes');
   }
 }

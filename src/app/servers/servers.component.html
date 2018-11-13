@@ -29,4 +29,5 @@
 
 <button class="btn btn-primary" (click)="onButtonClick()">Display Details</button>
 <p>{{ phrase }}</p>
-<p>{{ printedNumber }}</p>
+<p [ngStyle]="{backgroundColor: isGreaterThanFive()}" [ngClass]="isGreaterThanFive2()">{{ printedNumber }}</p>
+<app-server *ngFor="let num of numbers"></app-server>

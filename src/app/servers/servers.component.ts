@@ -57,4 +57,17 @@ export class ServersComponent implements OnInit {
       return this.phrase = 'please work';
     }
   }
+
+  isGreaterThanFive () {
+    if (this.printedNumber >= 5) {
+      return 'blue';
+    }
+  }
+
+  isGreaterThanFive2 () {
+    if (this.printedNumber >= 5) {
+      return 'white-font';
+    }
+
+  }
 }

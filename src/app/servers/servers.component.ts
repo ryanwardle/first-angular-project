@@ -15,8 +15,10 @@ export class ServersComponent implements OnInit {
   servers = ['TestServer', 'TestServer 2'];
   // userName = '';
   phrase = 'please work';
-  number = [];
-  display = true;
+  numbers = [];
+  printedNumber;
+  clicks = 1;
+  display = 'block';
 
   constructor() {
     setTimeout(() => {
@@ -28,9 +30,9 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
-   this.serverCreated = true;
-   this.servers.push(this.serverName);
-   this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   onUpdateServerName(event: Event) {
@@ -46,7 +48,13 @@ export class ServersComponent implements OnInit {
     // return true;
   // }
 
-  togglePhrase() {
-    console.log('yes');
+  onButtonClick () {
+    this.numbers.push(this.clicks++);
+    this.printedNumber = this.numbers.shift();
+    if (this.phrase === 'please work') {
+      return this.phrase = '';
+    } else if (this.phrase === '') {
+      return this.phrase = 'please work';
+    }
   }
 }
